@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Exist / Existir - Choose Language</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            background: linear-gradient(135deg, #1a3a52 0%, #0d1f2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .language-choice {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px 20px;
+        }
+
+        .language-choice h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .language-choice p {
+            font-size: 18px;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .language-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .lang-button {
+            display: inline-block;
+            background: white;
+            color: #1a3a52;
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+            cursor: pointer;
+            min-width: 200px;
+        }
+
+        .lang-button:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .lang-button.english {
+            background: white;
+            color: #1a3a52;
+        }
+
+        .lang-button.spanish {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .footer-note {
+            margin-top: 60px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="language-choice">
+    <h1>To Exist</h1>
+    <h1 style="margin-top: -10px;">Existir</h1>
+
+    <p>Choose your language / Elige tu idioma</p>
+
+    <div class="language-buttons">
+        <a href="en/" class="lang-button english">English</a>
+        <a href="es/" class="lang-button spanish">Español</a>
+    </div>
+
+    <div class="footer-note">
+        <p>A book by / Un libro de Maria del Rocio Medina Anguiano</p>
+    </div>
+</div>
+
+</body>
+</html>
