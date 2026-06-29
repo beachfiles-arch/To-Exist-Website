@@ -3,108 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Exist / Existir - Choose Language</title>
+    <meta name="description" content="Books by Maria del Rocio Beach — Existir / To Exist and Reflexiones / Reflections. Available in Spanish and English on Amazon.">
+    <meta name="author" content="Maria del Rocio Beach">
+    <title>María del Rocío Beach — Books / Libros</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Georgia', 'Garamond', serif;
+            line-height: 1.7; color: #333; background-color: #fff;
+        }
+
+        /* HEADER */
+        header {
             background: linear-gradient(135deg, #1a3a52 0%, #0d1f2d 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            color: white;
+            color: white; padding: 40px 20px; text-align: center;
         }
+        header h1 { font-size: 40px; font-weight: 300; letter-spacing: 2px; margin-bottom: 8px; }
+        header p { font-size: 17px; opacity: 0.85; }
 
-        .language-choice {
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* BOOKS */
+        .books-section { padding: 60px 0 40px; }
+        .books-section h2 {
+            text-align: center; font-size: 30px; color: #1a3a52;
+            margin-bottom: 10px;
+        }
+        .books-subtitle { text-align: center; color: #666; margin-bottom: 45px; font-style: italic; }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .book-card {
+            display: flex; flex-direction: column; align-items: center;
             text-align: center;
-            max-width: 600px;
-            padding: 40px 20px;
+        }
+        .book-card img {
+            width: 100%; height: auto; border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .book-card img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 26px rgba(0,0,0,0.25);
+        }
+        .book-title { font-size: 20px; color: #1a3a52; margin-top: 18px; font-weight: 600; }
+        .book-lang { font-size: 14px; color: #888; margin-top: 2px; letter-spacing: 1px; text-transform: uppercase; }
+        .buy-button {
+            display: inline-block; margin-top: 14px;
+            background: linear-gradient(135deg, #1a3a52 0%, #0d1f2d 100%);
+            color: white; padding: 12px 26px; text-decoration: none;
+            border-radius: 6px; font-size: 15px; font-weight: 600;
+            transition: all 0.3s ease; border: 2px solid transparent;
+        }
+        .buy-button:hover {
+            background: white; color: #1a3a52; border-color: #1a3a52;
+            transform: translateY(-2px);
         }
 
-        .language-choice h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 300;
-            letter-spacing: 2px;
+        @media (max-width: 900px) {
+            .books-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+        }
+        @media (max-width: 480px) {
+            .books-grid { grid-template-columns: 1fr; }
         }
 
-        .language-choice p {
-            font-size: 18px;
-            margin-bottom: 50px;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
+        /* SECTIONS */
+        .section { padding: 50px 0; border-top: 1px solid #eee; }
+        .section h2 { text-align: center; font-size: 28px; color: #1a3a52; margin-bottom: 30px; }
 
-        .language-buttons {
-            display: flex;
-            gap: 20px;
+        /* AUTHOR BIO */
+        .author-bio {
+            display: flex; gap: 36px; align-items: flex-start; flex-wrap: wrap;
             justify-content: center;
-            flex-wrap: wrap;
         }
+        .author-photo img {
+            width: 220px; height: auto; border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+        }
+        .author-text { flex: 1; min-width: 280px; max-width: 640px; }
+        .author-text h3 { font-size: 22px; color: #1a3a52; margin-bottom: 14px; }
+        .author-text p { margin-bottom: 14px; color: #444; }
 
-        .lang-button {
-            display: inline-block;
-            background: white;
-            color: #1a3a52;
-            padding: 20px 50px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 18px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-            cursor: pointer;
-            min-width: 200px;
+        /* CONTACT FORM */
+        .contact-intro { text-align: center; color: #666; margin-bottom: 30px; }
+        .contact-form { max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 6px; color: #1a3a52; font-weight: 600; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px;
+            font-family: inherit; font-size: 15px;
         }
+        .form-group textarea { min-height: 130px; resize: vertical; }
+        .submit-button {
+            display: block; width: 100%;
+            background: linear-gradient(135deg, #1a3a52 0%, #0d1f2d 100%);
+            color: white; padding: 14px; border: none; border-radius: 6px;
+            font-size: 16px; font-weight: 600; cursor: pointer; font-family: inherit;
+            transition: opacity 0.3s ease;
+        }
+        .submit-button:hover { opacity: 0.9; }
 
-        .lang-button:hover {
-            background: transparent;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #1a3a52 0%, #0d1f2d 100%);
+            color: white; text-align: center; padding: 30px 20px; margin-top: 40px;
         }
-
-        .lang-button.english {
-            background: white;
-            color: #1a3a52;
-        }
-
-        .lang-button.spanish {
-            background: transparent;
-            color: white;
-            border-color: white;
-        }
-
-        .footer-note {
-            margin-top: 60px;
-            font-size: 14px;
-            opacity: 0.7;
-        }
+        footer p { opacity: 0.85; }
     </style>
 </head>
 <body>
 
-<div class="language-choice">
-    <h1>To Exist</h1>
-    <h1 style="margin-top: -10px;">Existir</h1>
+<!-- HEADER -->
+<header>
+    <h1>María del Rocío Beach</h1>
+    <p>Libros &middot; Books</p>
+</header>
 
-    <p>Choose your language / Elige tu idioma</p>
+<main class="container">
 
-    <div class="language-buttons">
-        <a href="en/" class="lang-button english">English</a>
-        <a href="es/" class="lang-button spanish">Español</a>
-    </div>
+    <!-- BOOKS -->
+    <section class="books-section">
+        <h2>Available on Amazon</h2>
+        <p class="books-subtitle">Disponibles en español e inglés / Available in Spanish and English</p>
 
-    <div class="footer-note">
-        <p>A book by / Un libro de Maria del Rocio Medina Anguiano</p>
-    </div>
-</div>
+        <div class="books-grid">
+
+            <!-- Reflexiones (Spanish) -->
+            <div class="book-card">
+                <a href="https://www.amazon.com/dp/B0H4HN9H7W" target="_blank">
+                    <img src="images/reflexiones_es.png" alt="Reflexiones - Spanish edition">
+                </a>
+                <div class="book-title">Reflexiones</div>
+                <div class="book-lang">Español</div>
+                <a href="https://www.amazon.com/dp/B0H4HN9H7W" class="buy-button" target="_blank">Comprar</a>
+            </div>
+
+            <!-- Reflections (English) -->
+            <div class="book-card">
+                <a href="https://www.amazon.com/dp/B0H4R7SGKY" target="_blank">
+                    <img src="images/reflexiones_en.png" alt="Reflections - English edition">
+                </a>
+                <div class="book-title">Reflections</div>
+                <div class="book-lang">English</div>
+                <a href="https://www.amazon.com/dp/B0H4R7SGKY" class="buy-button" target="_blank">Buy</a>
+            </div>
+
+            <!-- Existir (Spanish) -->
+            <div class="book-card">
+                <a href="https://www.amazon.com/dp/B0BW2QM7PR" target="_blank">
+                    <img src="images/existir.png" alt="Existir - Spanish edition">
+                </a>
+                <div class="book-title">Existir</div>
+                <div class="book-lang">Español</div>
+                <a href="https://www.amazon.com/dp/B0BW2QM7PR" class="buy-button" target="_blank">Comprar</a>
+            </div>
+
+            <!-- To Exist (English) -->
+            <div class="book-card">
+                <a href="https://www.amazon.com/dp/B0BTD2ZPPP" target="_blank">
+                    <img src="images/toexist.png" alt="To Exist - English edition">
+                </a>
+                <div class="book-title">To Exist</div>
+                <div class="book-lang">English</div>
+                <a href="https://www.amazon.com/dp/B0BTD2ZPPP" class="buy-button" target="_blank">Buy</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- AUTHOR BIO -->
+    <section class="section">
+        <h2>Meet the Author / Conoce a la Autora</h2>
+        <div class="author-bio">
+            <div class="author-photo">
+                <img src="images/Authorheadshot.png" alt="María del Rocío Beach">
+            </div>
+            <div class="author-text">
+                <h3>María del Rocío Beach</h3>
+                <p>María del Rocío Beach is an author and entrepreneur based in Hawaii. Her books share practical tools for emotional growth, personal discipline, gratitude, and excellence in life, drawn from her own journey of transformation and healing after an autoimmune diagnosis.</p>
+                <p>María del Rocío Beach es autora y emprendedora con base en Hawái. Sus libros comparten herramientas prácticas para el crecimiento emocional, la disciplina personal, la gratitud y la excelencia en la vida, inspiradas en su propio camino de transformación y sanación.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section">
+        <h2>Get in Touch / Contáctanos</h2>
+        <p class="contact-intro">Have questions or want to reach out? / ¿Tienes preguntas o quieres comunicarte?</p>
+        <form class="contact-form" action="https://formspree.io/f/xkoerddk" method="POST">
+            <div class="form-group">
+                <label for="name">Name / Nombre</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email / Correo</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject / Asunto</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message / Mensaje</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send / Enviar</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 María del Rocío Beach. All rights reserved / Todos los derechos reservados.</p>
+</footer>
 
 </body>
 </html>
